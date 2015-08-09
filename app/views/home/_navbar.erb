@@ -1,0 +1,100 @@
+<!--네비바 -->
+    <div class="navbar-wrapper">
+      <div class="container">
+
+        <nav class="navbar navbar-inverse navbar-static-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="/">모두의 <b>LION</b></a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">알림<span class="caret"></span></a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li class="dropdown-header" style="text-align:center; padding-left: 0px;">NEWS</li>
+                    <li><a href="/home/official_noti">사이트 공지사항</a></li>
+                    <li><a href="/home/lion3_schedule_noti">3기 주요일정 공지</a></li>
+                    <li><a href="/home/event_noti">EVENT/행사 소식</a></li>
+                    <li class="divider"></li>
+                    <li class="dropdown-header" style="text-align:center; padding-left: 0px;">소리통</li>
+                    <li><a href="/home/question">사이트 질문하기</a></li>
+                    <li><a href="/home/suggest">건의 및 오류제보</a></li>
+                  </ul>
+                </li>
+                <li><a href="http://www.likelion.net/">멋사?</a></li>
+                <li><a href="#contact">Like Lion 1기</a></li>
+                <li><a href="#contact">Like Lion 2기</a></li>
+                <li><a href="#contact">Like Lion 3기</a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">메뉴<span class="caret"></span></a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li class="dropdown-header" style="text-align:center; padding-left: 0px;">오프라인</li>
+                    <li><a href="/home/bangsongpyungga">[8월2일]방송평가서비스(종)</a></li>
+                    <li><a href="/home/mersmap">[8월1일]메르스맵 만들기(종)</a></li>
+                    <li><a href="/home/babylion">[매주 토]아기사자(현)(진행 2/4)</a></li>
+                    <li class="divider"></li>
+                    <li class="dropdown-header" style="text-align:center; padding-left: 0px;">LECTURE</li>
+                    <li><a href="/home/mainlecture">본 강의 나눔터</a></li>
+                    <li><a href="/home/sublecture">보조 강의 나눔터</a></li>
+                    <li><a href="https://docs.google.com/spreadsheets/d/1DLYpGf6_J9urzXnMHxCrvDG9v0ydoYSi_Hi4pwyVrf0/edit#gid=0">함께 만드는 강의 노트</a></li>
+                    <li class="divider"></li>
+                    <li class="dropdown-header" style="text-align:center; padding-left: 0px;">COMMUNITY</li>
+                    <li><a href="/home/freeboard">자유게시판</a></li>
+                    <li><a href="/home/bambooforest">대나무숲</a></li>
+                    <li><a href="/home/joyboard">유머게시판</a></li>
+                    <li><a href="/home/pictureboard">사진겔러리</a></li>
+                    <li><a href="/home/foodboard">오늘뭐먹지</a></li>
+                    <li class="divider"></li>
+                    <li class="dropdown-header" style="text-align:center; padding-left: 0px;">a.k.a.장돌뱅이</li>
+                    <li><a href="/home/postscript">(후기)다녀왔어요!</a></li>
+                    <li><a href="/home/meetboard">(교류)만나보아요!</a></li>
+                    <li><a href="/home/memberingboard">(모집)멤버를 찾아요!</a></li>
+                    <li><a href="/home/marketboard">(아나바다)사요or팔아요or버려요</a></li>
+                    <li class="divider"></li>
+                    <li class="dropdown-header" style="text-align:center; padding-left: 0px;">알아두면 좋은곳들</li>
+                    <li><a href="http://www.venturesquare.net/">벤쳐스퀘어</a></li>
+                  </ul>
+                </li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">학교찾기<span class="caret"></span></a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li class="dropdown-header"><a href="/home/univ">학교 등록하기</a></li>
+                    <li class="divider"></li>
+                    <% @univ = Univ.all %>
+                    <% @univ.each do |u| %>
+                      <li><a href="home/univ/<%= u.id %>"><%= u.univ_code %>th. <%= u.univ_name %></a></li>
+                    <% end %>
+                    
+                  </ul>
+                </li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">계정관리<span class="caret"></span></a>
+                  <ul class="dropdown-menu" role="menu">
+                    
+                    <% #if user_signed_in? %>
+                    <li><a href="/users/sign_out" data-method="delete">로그아웃하기</a></li>
+                    <li><a href="#">내 정보 수정하기</a></li>
+                    <% #else %>
+                    <li><a href="/users/sign_in">로그인하기</a></li>
+                    <li><a href="/users/sign_up">회원가입하기</a></li>
+                    <% #end %>
+                    
+                    
+                  </ul>
+                </li>
+              </ul>
+              <a class="navbar-brand" href="http://class.likelion.net" style="padding-left: 20px; padding-right: 10px"><img src="https://scontent-nrt1-1.xx.fbcdn.net/hphotos-xpf1/v/t1.0-9/10984212_806110196172711_8856617885771941727_n.jpg?oh=ab883a0b5c47dd2f90b1d85dc2d74caa&oe=564B66EB" width="70px"/></a>
+              <a class="navbar-brand" href="http://stack.likelion.net" style="padding-left: 10px; padding-right: 0px"><img src="https://fbcdn-sphotos-d-a.akamaihd.net/hphotos-ak-xfp1/v/t1.0-9/11037219_806081089508955_6963352891777546897_n.jpg?oh=2d2c669c568b110c8f8f79b89137cd73&oe=5645F7A6&__gda__=1446427695_b665e5d94d8843acb9fb636c66bd1eaa" width="120px"/></a>
+            </div>
+          </div>
+        </nav>
+
+      </div>
+    </div>

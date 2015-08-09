@@ -1,0 +1,29 @@
+ <!-- 데이터베이스에 이렇게 저장했다. 왔다갔다하기 귀찮다;;
+      
+      t.string :univ_name             #학교이름 ㅇ
+      t.integer :univ_code            #학교 코드 => 코드표 띄워둘것
+      t.string :univ_logo             #학교로고 ㅇ
+      t.string :univ_leader_name      #1.학교대표이름
+      t.string :univ_leader_picture   #.학교대표사진
+      t.integer :univ_howmany_team    #2.팀 갯수 ㅇ
+      t.integer :univ_howmany_people  #3.전체 정원 ㅇ
+      t.string :univ_where            #4.소재지역 도 / 시(구, 군) / 동(면)
+      t.text :univ_introduce          #5.학교3기 소개 ㅇ
+      t.string :univ_our_picture1     #6.학교3기 활동사진1 ㅇ
+      t.string :univ_our_picture2     #7.학교3기 활동사진2 ㅇ
+      t.string :univ_our_picture3     #8.학교3기 활동사진3 ㅇ -->
+
+<div class="jumbotron">
+    <div class="container">
+        <img src="https://goo.gl/fE1bYo" name="학교로고">
+        <h1><%= @detail.univ_name %> 멋쟁이 사자처럼 3기는</h1><br>
+        <h2><%= @detail.univ_leader_name %>을 대표로하여</h2><br>
+        <h2><%= @detail.univ_howmany_team %>개의 팀, <%= @detail.univ_howmany_people %>명의 팀원으로 이루어져 있습니다.</h2><br>
+        <hr>
+        <img class="col-md-4" src="http://goo.gl/QV1Rhl" name="활동사진">
+        <img class="col-md-4" src="http://goo.gl/QV1Rhl" name="활동사진"> 
+        <img class="col-md-4" src="http://goo.gl/QV1Rhl" name="활동사진"> 
+        <p><%= @detail.univ_introduce %></p>
+        
+    </div>
+</div>

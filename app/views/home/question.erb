@@ -1,0 +1,40 @@
+<%= render :partial => 'navbar' %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 col-xs-12 panel panel-default">
+          <!-- Default panel contents -->
+          <div class="panel-heading">질문 게시판</div>
+          <div class="panel-body">
+            <p>이 곳은 <b>사이트에 관련한 질문</b>만 받는 게시판 입니다. 사이트 운영, 개발, 기능 등이 아닌 다른 질문에 대해서는 <b>[자유게시판]</b>에서 자유롭게 묻고 답해주시면 감사하겠습니다.</p>
+          </div>
+        
+          <!-- Table -->
+          <!--글쓰기 버튼, 글쓰는 contents로 이동하기-->
+
+          <input type=button value="글쓰기"  OnClick="window.location='/home/show_write_form'" >
+          
+          <table class="table">
+           <p>페이지:<%= @current_page %> </p>
+            <tr>    <td>#</td>   <td>학교</td>   <td>제목</td>   <td>작성자</td>   <td>팀</td>   <td>조회</td>   </tr>
+            <% @question_post.each do |question_post| %>
+                <% @user_info.each do |user_info| %>
+                    <tr>
+                        <td>#</td>
+                        <td><%= user_info.user_school_name %></td>
+                        <td><%= question_post.qp_title %></td>
+                        <td><%= user_info.user_name %></td>
+                        <td><%= user_info.user_team %></td>
+                        <td>조회(post url 완성하면 뷰카운트 삽입)</td>
+                    </tr>
+                <% end %>
+            <% end %>
+          </table>
+          
+          
+          
+        </div>
+    </div>
+</div>
+
+<%= render :partial => 'boardfoot' %>

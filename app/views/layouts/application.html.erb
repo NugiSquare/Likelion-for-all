@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Workspace</title>
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+  <!-- 부가적인 테마 -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+    
+    
+<%= yield %>
+
+
+<!-- FOOTER -->
+      <footer class="footer">
+        <p class="pull-right"><a href="#"><b>꼭대기로</b></a></p>
+        <p>&copy; 2015 YongHyun Kim | 재철이는 코끼리를타고 | Univ. Dongguk | 3rd of likelion. &middot; <a href="#">이용정책</a> &middot; <a href="#">용어</a></p>
+      </footer>
+
+    </div><!-- /.container -->
+
+
+</body>
+</html>
